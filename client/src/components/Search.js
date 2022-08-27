@@ -37,11 +37,6 @@ const Search = (props) => {
                 <input value={input} name="input" onChange={e => setInput(e.target.value)}/>
                 <MicIcon className='search__micIcon'/>
             </div>
-            
-            {/* {hideButtons = 0 ? ( */}
-            {/* <div> */}
-
-            {/* find easy way to hide these, so they are hidden when using component for Search page */}
             {!hideButtons? (
             <div className='search__buttons'>
                 <Button type='submit' onClick={search} variant='outlined'>Google Search</Button>
