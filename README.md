@@ -6,6 +6,7 @@ Technologies used: React, Node, Express, Material UI, HTML, CSS, JS, API, AWS EC
 - useContext and Created a custom hook for the Search Engine API call.
 - Full Stack Application with MongoDB and Mongoose installed as well.
 - Demonstrate proficiency with using APIs.
+- All styling done manually to demonstrate CSS proficiency. Material UI for Google Icons.
 
 http://googleclone.com 
 http://54.151.83.73/ 
