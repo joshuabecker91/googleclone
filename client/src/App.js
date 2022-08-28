@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    // BEM
     <div className="App">
       <BrowserRouter>
         <Routes>

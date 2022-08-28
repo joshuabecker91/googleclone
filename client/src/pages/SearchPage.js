@@ -1,8 +1,5 @@
 import React from 'react';
 import './SearchPage.css'
-import { useStateValue } from '../StateProvider';
-import UseGoogleSearch from '../components/UseGoogleSearch';
-import Response from '../Response';
 import { Link } from 'react-router-dom';
 import Search from '../components/Search';
 import SearchIcon from '@mui/icons-material/Search';
@@ -11,12 +8,15 @@ import LocalOfferIcon from '@mui/icons-material/LocalOfferOutlined';
 import VideoIcon from '@mui/icons-material/VideoCallOutlined';
 import DescriptionIcon from '@mui/icons-material/DescriptionOutlined';
 import MoreVertIcon from '@mui/icons-material/MoreVertOutlined';
-import SettingsIcon from '@mui/icons-material/SettingsOutlined';
+import { useStateValue } from '../StateProvider';
+import UseGoogleSearch from '../components/UseGoogleSearch';
+import Response from '../Response';
+// import SettingsIcon from '@mui/icons-material/SettingsOutlined';
 
 const SearchPage = () => {
 
     const [{term}, dispatch] = useStateValue();
-    
+
     // LIVE API CALL
     const { data } = UseGoogleSearch(term);
     console.log(data)
@@ -72,33 +72,35 @@ const SearchPage = () => {
             <div className='break'></div>
 
 
-                {true && (
-                    <div className='searchPage__results'>
-                        <p className='searchPage__resultCount'>
-                            About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) for {term}
-                        </p>
+            {true && (
+                <div className='searchPage__results'>
+                    <p className='searchPage__resultCount'>
+                        About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) for {term}
+                    </p>
 
-                        {data?.items.map(item => (
-                            <div className='searchPage__result'>
-                                <div className='searchPage__resultText'>
-                                    <a href={item.link}>
-                                        <p>{item.displayLink}</p>
-                                        <h2 className='searchPage__resultTitle' href={item.link}>{item.title}</h2>
-                                    </a>
-                                    <p className='searchPage__resultSnippet'>{item.snippet}</p>
-                                </div>
-
-                                <div>
-                                {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
-                                    <img className='searchPage__resultImage' src={item.pagemap?.cse_image[0]?.src} alt=''></img>
-                                )}
-                                </div>
+                    {data?.items.map(item => (
+                        <div className='searchPage__result'>
+                            <div className='searchPage__resultText'>
+                                <a href={item.link}>
+                                    <p>{item.displayLink}</p>
+                                    <h2 className='searchPage__resultTitle' href={item.link}>{item.title}</h2>
+                                </a>
+                                <p className='searchPage__resultSnippet'>{item.snippet}</p>
                             </div>
-                        ))}
-                    </div>
-                )}
-            
-                {/* <h1>{term}</h1> */}
+
+                            <div>
+                            {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
+                                <img className='searchPage__resultImage' src={item.pagemap?.cse_image[0]?.src} alt=''></img>
+                            )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+        
+            {/* <h1>{term}</h1> */}
+
+            {/* add map through images for new component */}
 
         </div>
     )

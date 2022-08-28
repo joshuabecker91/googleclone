@@ -8,8 +8,6 @@ import Avatar from '@mui/material/Avatar';
 
 const Home = () => {
 
-
-
     return (
         <div className='home'>
             <div className='home__header'>
@@ -29,16 +27,6 @@ const Home = () => {
                 <div className="home__inputContainer">
                     <Search/>
                 </div>
-                {/* <div>
-                    <p>Technologies used:</p>
-                    <ul className='home__technologies'>
-                        <li>React.js</li>
-                        <li>Node.js</li>
-                        <li>Express.js</li>
-                        <li>Mongoose</li>
-                        <li>MongoDB</li>
-                    </ul>
-                </div> */}
             </div>
         </div>
     )

@@ -30,7 +30,6 @@
     color: gray;
 }
 
-
 /* Search Buttons */
 .search__buttons {
     display: flex;
@@ -57,7 +56,7 @@
 }
 
 
-/* Technologies Button */
+/* Project Information */
 .search__techbutton {
     height: 400px;
     display: flex;
@@ -76,6 +75,10 @@
     color: #5f6368;
 }
 
+.search__techbutton a {
+    text-decoration: none;
+}
+
 .search__techbutton button:hover{
     box-shadow: 0 1px 1px rgb(0,0,0,0.1);
     background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);
@@ -86,4 +89,9 @@
 
 .search__buttonsHidden {
     display: none !important;
+}
+
+/* Very interesting, with iPhone return on keyboard button - form on results page doesn't work but if you make the button visible it works, look into this */
+.hiddenSubmit {
+    display: none;
 }

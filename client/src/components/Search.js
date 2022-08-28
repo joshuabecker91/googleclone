@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Search.css';
 import SearchIcon from '@mui/icons-material/Search';
 import MicIcon from '@mui/icons-material/Mic';
@@ -10,21 +10,34 @@ import { actionTypes } from '../reducer';
 
 const Search = (props) => {
 
-    const [{}, dispatch] = useStateValue();
+    const [{term}, dispatch] = useStateValue();
 
     const [ input, setInput ] = useState('');
+
     const navigate = useNavigate(); 
 
     let { hideButtons = false } = props;
 
+    useEffect(() => {
+        setInput(term);
+    }, [term]);
+
+
     const search = e => {
         e.preventDefault();
         console.log(`You hit the search button and you searched for ${input}`)
-        dispatch({
-            type: actionTypes.SET_SEARCH_TERM,
-            term: input,
-        })
-        navigate('/search') 
+        if (input){
+            dispatch({
+                type: actionTypes.SET_SEARCH_TERM,
+                term: input,
+            })
+            navigate('/search') 
+        } else {
+            dispatch({
+                type: actionTypes.SET_SEARCH_TERM,
+                term: null,
+            })
+        }
         // could also do it this way - pass via props navigate(`/search/${input}`)
         // old way of doing it history.push('/search')
         // then when it goes to /search route that component will fetch the term via useStateValue
@@ -37,6 +50,11 @@ const Search = (props) => {
                 <input value={input} name="input" onChange={e => setInput(e.target.value)}/>
                 <MicIcon className='search__micIcon'/>
             </div>
+
+            {hideButtons? (
+            <input className='hiddenSubmit' type='submit' onClick={search} ></input>
+            ):null}
+
             {!hideButtons? (
             <div className='search__buttons'>
                 <Button type='submit' onClick={search} variant='outlined'>Google Search</Button>
@@ -44,11 +62,13 @@ const Search = (props) => {
             </div>
             ):null}
 
-            {/* {!hideButtons? (
+            {!hideButtons? (
             <div className='search__techbutton'>
-                <Button variant='outlined'>Project Information</Button>
+                <a href="https://github.com/joshuabecker91/googleclone">
+                    <Button variant='outlined'>Project Information</Button>
+                </a>
             </div>
-            ):null} */}
+            ):null}
 
         </form>
     )
