@@ -1,4 +1,6 @@
-Google Clone using Google's Search API to render search engine results.
+Software Engineer | Google Clone | Full Stack Application using React, Node, Express, MongoDB, API deployed w/AWS EC2
+
+Google Clone using Google's Custom Search API to render search engine results.
 
 React, Node, Express, Material UI, HTML, CSS, JS, AWS EC2, AWS Route 53.
 
