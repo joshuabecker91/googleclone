@@ -1,4 +1,4 @@
-Software Engineer | Google Clone | Full Stack Application using React, Node, Express, MongoDB, API, deployed w/AWS EC2
+Google Clone | Full Stack Application using React, Node, Express, MongoDB, API, deployed w/AWS EC2
 
 Technologies used: React, Node, Express, Material UI, HTML, CSS, JS, API, AWS EC2, AWS Route 53
 
