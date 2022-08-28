@@ -6,6 +6,6 @@ Technologies used: React, Node, Express, Material UI, HTML, CSS, JS, API, AWS EC
 - useContext and Created a custom hook for the Search Engine API call.
 - Full Stack Application with MongoDB and Mongoose installed as well.
 
-http://www.googleclone.com http://54.151.83.73/ AWS EC2 Deployed
+http://googleclone.com http://54.151.83.73/ AWS EC2 Deployed
 
 "# googleclone"
