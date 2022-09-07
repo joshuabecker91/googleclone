@@ -11,4 +11,6 @@ http://googleclone.com
 http://54.151.83.73/ 
 AWS EC2 Deployed
 
+![image](https://user-images.githubusercontent.com/98496684/188942913-7febaa1e-db90-4db5-afbd-13c6e3c84d6c.png)
+
 "# googleclone"
